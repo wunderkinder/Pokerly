@@ -58,22 +58,7 @@ namespace Pokerly.Classes
             this.CardDeck = cardDeck;
             Players = new List<Player>();
         }
-        public Round(int playerCount, CardDeck cardDeck)
-        {
-            if (playerCount < 2)
-            {
-                //error
-                return;
-            }
-            Players = new List<Player>();
-            for (int i = 0; i < playerCount; i++)
-            {
-                Players.Add(new Player(i.ToString(), "Player" + i));
-            }
-            this.CardDeck = cardDeck;
-            DealCards();
-        }
-
+        
         public void DealCards(int cardsPerHand = 5)
         {
             if (CardDeck.CardsPerDeck < (cardsPerHand * Players.Count()))
@@ -418,7 +403,7 @@ namespace Pokerly.Classes
 
         }
 
-        public List<Player> GetWinner()
+        public List<Player> DetermineWinner()
         {
             //let's sort the players by hand type:
             Players = Players.OrderByDescending(p => p.Hand.HandType).ToList();

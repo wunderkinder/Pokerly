@@ -36,7 +36,7 @@ namespace Pokerly
             try
             {
                 var player1 = (Player)Session["Player1"];
-               var player2 = (Player)Session["Player2"];
+                var player2 = (Player)Session["Player2"];
 
                 txtPlayer1.Text = player1.Name;
                 ddlHandPlayer1.SelectedValue = player1.HandTypeOverride.ToString();

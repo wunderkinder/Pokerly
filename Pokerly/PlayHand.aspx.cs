@@ -105,7 +105,7 @@ namespace Pokerly
         private void ShowResult()
         {
             StringBuilder sbResult = new StringBuilder();
-            List<Player> winners = r.GetWinner();
+            List<Player> winners = r.DetermineWinner();
             foreach (var w in winners)
             {
                 if(sbResult.Length > 0)
